@@ -39,9 +39,9 @@ namespace CatalogService.Application.Services
             return _context.Items.First(item => item.Id == id);
         }
 
-        public void AddItem(ItemCreateDto item)
+        public void AddItem(Item item)
         {
-            _context.Items.Add(item.ToModel());
+            _context.Items.Add(item);
             _context.SaveChanges();
         }
 

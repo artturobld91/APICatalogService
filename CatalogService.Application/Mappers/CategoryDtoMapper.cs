@@ -12,6 +12,9 @@ namespace CatalogService.Application.Mappers
     {
         public static CategoryDto ToDto(this Category category)
         {
+            if (category is null)
+                return null;
+
             CategoryDto dto = new CategoryDto()
             {
                 Id = category.Id,
@@ -19,6 +22,7 @@ namespace CatalogService.Application.Mappers
                 Url = category.Url,
                 Items = category.Items
             };
+
             return dto;
         }
 

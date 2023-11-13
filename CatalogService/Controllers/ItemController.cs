@@ -55,7 +55,7 @@ namespace CatalogService.Controllers
         [ProducesResponseType(typeof(IActionResult), StatusCodes.Status201Created)]
         public IActionResult AddItem([FromBody] ItemCreateDto item)
         {
-            _itemService.AddItem(item);
+            _itemService.AddItem(item.ToModel());
             return CreatedAtAction(nameof(GetItem), item);
         }
 

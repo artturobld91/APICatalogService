@@ -31,9 +31,10 @@ namespace CatalogService.Controllers
         [HttpGet("GetCategory/{id}", Name = "GetCategory")]
         [ServiceFilter(typeof(HateoasCategoryFilterAttribute))]
         [ProducesResponseType(typeof(IActionResult), StatusCodes.Status200OK)]
-        public CategoryDto GetCategory([FromRoute] int id)
+        public ActionResult<CategoryDto> GetCategory([FromRoute] int id)
         {
-            return _categoryService.GetCategory(id).ToDto();
+            CategoryDto categoryDto = _categoryService.GetCategory(id).ToDto();
+            return categoryDto is null ? NotFound() : Ok(categoryDto);
         }
 
         [HttpPost("AddCategory")]

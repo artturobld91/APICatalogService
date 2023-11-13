@@ -22,7 +22,7 @@ namespace CatalogService.Application.Services
 
         public Category GetCategory(int id)
         {
-            return _context.Categories.First(category => category.Id == id);
+            return _context.Categories.FirstOrDefault(category => category.Id == id);
         }
 
         public void AddCategory(CategoryCreateDto category)

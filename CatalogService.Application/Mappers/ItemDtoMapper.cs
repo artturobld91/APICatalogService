@@ -65,7 +65,6 @@ namespace CatalogService.Application.Mappers
         {
             Item item = new Item()
             {
-                Id = dto.Id,
                 Name = dto.Name,
                 Description = dto.Description,
                 Image = dto.Image,

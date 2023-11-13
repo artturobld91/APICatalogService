@@ -13,7 +13,7 @@ namespace CatalogService.Application.Interfaces
 
         public Item GetItem(int id);
 
-        public void AddItem(ItemCreateDto item);
+        public void AddItem(Item item);
 
         public void DeleteItem(int id);
 
